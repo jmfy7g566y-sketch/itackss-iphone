@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111013">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="itackss">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icon.svg">
+<title>itackss</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <button class="menu-btn" id="menuBtn" aria-label="Меню">☰</button>
+    <div class="brand">ita<span>ckss</span><small>YOUR MUSIC SPACE</small></div>
+    <button class="avatar" id="addTop" aria-label="Добавить">＋</button>
+  </header>
+  <aside class="sidebar" id="sidebar">
+    <div class="nav-label">МЕНЮ</div>
+    <button class="nav active" data-view="home">⌂ <span>Главная</span></button>
+    <button class="nav" data-view="library">♫ <span>Моя музыка</span></button>
+    <button class="nav" data-view="playlists">▤ <span>Плейлисты</span></button>
+    <button class="nav links-nav" data-view="links">↗ <span>Мои ссылки</span><i></i></button>
+    <div class="side-note">YOUR PERSONAL<br> MUSIC UNIVERSE</div>
+  </aside>
+  <main class="content">
+    <section class="view" id="homeView">
+      <div class="eyebrow">ПЯТНИЦА · ТВОЁ ПРОСТРАНСТВО</div>
+      <h1>Музыка, которая<br><em>чувствует тебя.</em></h1>
+      <p class="muted">Твоя музыка. Твои правила. Твой itackss.</p>
+      <div class="hero">
+        <div class="flower">✿</div><div class="hero-copy"><span>WELCOME BACK</span><strong>Find your<br>own rhythm.</strong><small>СОЗДАЙ СВОЮ АТМОСФЕРУ</small></div>
+      </div>
+      <div class="section-head"><h2>Быстрый доступ</h2><span>СЕРВИСЫ</span></div>
+      <div class="services">
+        <a href="https://music.yandex.ru/" target="_blank">Яндекс<br>Музыка</a>
+        <a href="https://soundcloud.com/" target="_blank">Sound<br>Cloud</a>
+        <a href="https://open.spotify.com/" target="_blank">Spotify</a>
+        <a href="https://music.youtube.com/" target="_blank">YouTube<br>Music</a>
+      </div>
+      <div class="section-head"><h2>Недавно добавлено</h2><button class="text-btn" data-goto="links">Все ссылки ↗</button></div>
+      <div id="recentLinks" class="recent empty">Здесь появятся твои сохранённые треки и плейлисты.</div>
+    </section>
+    <section class="view hidden" id="libraryView">
+      <div class="eyebrow">ТВОЯ КОЛЛЕКЦИЯ</div><h1>Моя <em>музыка.</em></h1>
+      <p class="muted">Добавляй аудиофайлы с iPhone и слушай их здесь.</p>
+      <label class="upload-card">＋ <b>Добавить музыку</b><small>MP3, M4A, WAV, AAC и другие форматы, поддерживаемые iPhone</small><input id="audioInput" type="file" accept="audio/*" multiple></label>
+      <div id="tracks" class="track-list empty">Пока нет локальных треков.</div>
+    </section>
+    <section class="view hidden" id="playlistsView">
+      <div class="eyebrow">СОБИРАЙ НАСТРОЕНИЯ</div><h1>Твои <em>плейлисты.</em></h1>
+      <p class="muted">Сохраняй подборки ссылками в разделе «Мои ссылки».</p>
+      <div class="playlist-empty">✿<br><b>Твоя коллекция начинается здесь</b><small>Добавь ссылку на любимый плейлист.</small><button class="primary" data-goto="links">Добавить ссылку</button></div>
+    </section>
+    <section class="view hidden" id="linksView">
+      <div class="eyebrow">ТВОИ МУЗЫКАЛЬНЫЕ НАХОДКИ</div><h1>Мои <em>ссылки.</em></h1>
+      <p class="muted">Собери любимые треки и плейлисты из разных сервисов в одном месте.</p>
+      <div class="add-link">
+        <label>НАЗВАНИЕ <input id="linkTitle" placeholder="Например, ночной плейлист"></label>
+        <label>ССЫЛКА <input id="linkUrl" type="url" placeholder="https://..." inputmode="url"></label>
+        <button class="primary" id="saveLink">＋ Сохранить ссылку</button>
+      </div>
+      <div id="linkList" class="link-list empty">Пока здесь пусто. Добавь первую музыкальную ссылку.</div>
+      <p class="footnote">Ссылки открывают оригинальные сервисы. Подписки и ограничения самих сервисов продолжают действовать.</p>
+    </section>
+  </main>
+  <footer class="player">
+    <div class="now"><div class="cover">✿</div><div><b id="nowTitle">Ничего не играет</b><small id="nowSub">Выбери локальный трек</small></div></div>
+    <div class="controls"><button id="prevBtn">Ⅱ</button><button class="play" id="playBtn">▶</button><button id="nextBtn">↗</button></div>
+    <audio id="audio" controls></audio>
+  </footer>
+</div>
+<script src="app.js"></script>
+</body></html>
